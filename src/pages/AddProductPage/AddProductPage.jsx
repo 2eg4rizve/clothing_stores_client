@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -33,18 +32,18 @@ const AddProductPage = () => {
        
 
 
-        const newProduct = { shopName, shopLogo, shopInfo, shopLocation, shopOwnerEmail, shopOwnerName }
+        const newProduct = { productName, productImg, productQuantity, productLocation, productionCost, profitMargin,productDiscount,ProductDescription}
 
         console.log(newProduct);
 
 
 
-        fetch('http://localhost:5000/shops', {
+        fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newShop)
+            body: JSON.stringify(newProduct)
         })
             .then(res => res.json())
             .then(data => {
