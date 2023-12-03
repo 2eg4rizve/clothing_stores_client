@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -10,7 +11,7 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
 
     const handleDelete = id => {
 
-        console.log("1st : ",id);
+        console.log("1st : ", id);
 
         Swal.fire({
             title: "Are you sure?",
@@ -28,8 +29,8 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
                 })
                     .then(res => res.json())
                     .then(data => {
+
                        
-                        AllProductsRefetch()
 
                         if (data.deletedCount > 0) {
                             Swal.fire(
@@ -37,8 +38,9 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
                                 'Your Book has been deleted.',
                                 'success'
                             )
-                           
+
                         }
+                        AllProductsRefetch()
 
                     })
 
@@ -48,7 +50,7 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
     return (
         <div>
 
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card bg-[#F3EEEA] shadow-xl">
                 <figure><img src={productImg} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -59,8 +61,11 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
 
                     <div className="card-actions justify-end">
 
-                        <button className="badge badge-outline"> Update</button>
-                        <button onClick={() => handleDelete(_id)} className="badge badge-outline"> Delete </button>
+                        <Link to={`/productUpdate/${_id}`} >
+
+                            <button className="btn badge badge-outline"> Update</button>
+                        </Link>
+                        <button onClick={() => handleDelete(_id)} className="btn badge badge-outline "> Delete </button>
 
                     </div>
                 </div>

@@ -21,6 +21,7 @@ import {
   QueryClientProvider,
 } from 'react-query'
 import MyProducts from './pages/MyProducts/MyProducts';
+import ProductUpdate from './pages/ProductUpdate/ProductUpdate';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/myProducts",
         element: <MyProducts></MyProducts>
+      },
+      {
+        path:"/productUpdate/:id",
+        element: <ProductUpdate></ProductUpdate>
       }
 
 
