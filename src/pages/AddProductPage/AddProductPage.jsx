@@ -44,17 +44,17 @@ const AddProductPage = () => {
 
         const form = event.target;
 
-        const productName = form.productName.value || "";
-        const productImg = form.productImg.value || "";
+        const productName = form?.productName?.value || "";
+        const productImg = form?.productImg?.value || "";
 
-        const productQuantity = form.productQuantity.value || "";
-        const productLocation = form.productLocation.value || "";
+        const productQuantity = form?.productQuantity?.value || "";
+        const productLocation = form?.productLocation?.value || "";
 
-        const productionCost = form.productionCost.value || "";
-        const profitMargin = form.profitMargin.value || "";
+        const productionCost = form?.productionCost?.value || "";
+        const profitMargin = form?.profitMargin?.value || "";
 
-        const productDiscount = form.productDiscount.value || "";
-        const ProductDescription = form.ProductDescription.value || "";
+        const productDiscount = form?.productDiscount?.value || "";
+        const ProductDescription = form?.ProductDescription?.value || "";
 
 
 

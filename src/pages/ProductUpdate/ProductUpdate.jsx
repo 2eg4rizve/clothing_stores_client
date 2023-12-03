@@ -109,7 +109,7 @@ const ProductUpdate = () => {
             <p>id: {id}</p>
 
             <div>
-                <p className="text-5xl font-bold text-center my-[20px] pt-[20px]">Update Product </p>
+                <p className="text-5xl font-bold text-center my-[20px] pt-[20px]">Product Update</p>
 
                 <div className="bg-[#EEEEEE] p-10 text-black">
 

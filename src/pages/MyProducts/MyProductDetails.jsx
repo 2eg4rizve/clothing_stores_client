@@ -30,17 +30,17 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
                     .then(res => res.json())
                     .then(data => {
 
-                       
+                        AllProductsRefetch()
 
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your Book has been deleted.',
+                                'Your product has been deleted.',
                                 'success'
                             )
 
                         }
-                        AllProductsRefetch()
+                        
 
                     })
 
@@ -50,8 +50,8 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
     return (
         <div>
 
-            <div className="card bg-[#F3EEEA] shadow-xl">
-                <figure><img src={productImg} alt="Shoes" /></figure>
+            <div className="card bg-[#F3EEEA] shadow-xl mt-[50px]">
+                <figure><img className="h-[200px] w-full object-contain" src={productImg} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                         {productName}
