@@ -20,6 +20,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import MyProducts from './pages/MyProducts/MyProducts';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path: "/addProduct",
         element: <AddProductPage></AddProductPage>
 
+      },
+      {
+        path: "/myProducts",
+        element: <MyProducts></MyProducts>
       }
 
 
