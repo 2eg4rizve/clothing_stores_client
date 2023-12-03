@@ -8,14 +8,14 @@ const useAllProducts = () => {
     // const { user } = useContext(AuthContext);
 
 
-    const {data: allProducts = [], isLoading: AllProductsLoading  } = useQuery({
+    const {data: allProducts = [],refetch: AllProductsRefetch,isLoading: AllProductsLoading } = useQuery({
         queryKey: ['AllProducts'],
         queryFn: async () => {
             const res = await axios.get("http://localhost:5000/products");
             return res.data;
         }
     })
-    return [allProducts,AllProductsLoading]
+    return [allProducts,AllProductsLoading,AllProductsRefetch]
 };
 
 export default useAllProducts;

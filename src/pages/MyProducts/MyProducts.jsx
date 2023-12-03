@@ -8,7 +8,7 @@ const MyProducts = () => {
 
     const { user } = useContext(AuthContext);
 
-    const [allProducts, AllProductsLoading] = useAllProducts();
+    const [allProducts,AllProductsLoading,AllProductsRefetch] = useAllProducts();
 
     if (AllProductsLoading) {
         return <p>Loading...............</p>
@@ -26,7 +26,7 @@ const MyProducts = () => {
             
             <div className="grid grid-cols-3 gap-5">
                 {
-                    myProducts.map(item => <MyProductDetails key={item._id} item={item}></MyProductDetails>)
+                    myProducts.map(item => <MyProductDetails key={item._id} item={item} AllProductsRefetch={AllProductsRefetch}></MyProductDetails>)
                 }
 
             </div>
