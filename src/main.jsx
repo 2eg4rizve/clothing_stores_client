@@ -15,7 +15,11 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import CreateShop from './pages/CreateShop/CreateShop';
 import AddProductPage from './pages/AddProductPage/AddProductPage';
 
-
+import {
+  
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
 
 const router = createBrowserRouter([
   {
@@ -53,11 +57,15 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-    <RouterProvider router={router} />
-    </AuthProvider>
-    
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
+
   </React.StrictMode>,
 )
