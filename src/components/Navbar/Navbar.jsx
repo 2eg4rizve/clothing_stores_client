@@ -26,7 +26,7 @@ const Navbar = () => {
 
 
 
-        {
+        {/* {
             <NavLink
                 to="/createShop"
                 className={({ isActive, isPending }) =>
@@ -37,9 +37,9 @@ const Navbar = () => {
             </NavLink>
 
 
-        }
+        } */}
 
-        {
+        {/* {
             <NavLink
                 to="/addProduct"
                 className={({ isActive, isPending }) =>
@@ -50,9 +50,9 @@ const Navbar = () => {
             </NavLink>
 
 
-        }
+        } */}
 
-        {
+        {/* {
             <NavLink
                 to="/myProducts"
                 className={({ isActive, isPending }) =>
@@ -63,9 +63,9 @@ const Navbar = () => {
             </NavLink>
 
 
-        }
+        } */}
 
-        {
+        {/* {
             <NavLink
                 to="/productTable"
                 className={({ isActive, isPending }) =>
@@ -76,7 +76,7 @@ const Navbar = () => {
             </NavLink>
 
 
-        }
+        } */}
 
 
 
@@ -95,6 +95,33 @@ const Navbar = () => {
 
 
         }
+
+
+        {
+            <NavLink
+                to="/dashBoard/cart"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#362FD9] underline font-bold mr-[20px]" : "mr-[20px]"
+                }
+            >
+                DashBoard
+            </NavLink>
+
+
+        }
+
+        {/* {
+            <NavLink
+                to="/dashBoard/productTable"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#362FD9] underline font-bold mr-[20px]" : "mr-[20px]"
+                }
+            >
+                Product-Table
+            </NavLink>
+
+
+        } */}
 
 
 

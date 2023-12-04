@@ -23,6 +23,8 @@ import {
 import MyProducts from './pages/MyProducts/MyProducts';
 import ProductUpdate from './pages/ProductUpdate/ProductUpdate';
 import ProductTable from './pages/ProductTable/ProductTable';
+import Dashboard from './Layout/Dashboard';
+import Cart from './pages/Cart/Cart';
 
 const router = createBrowserRouter([
   {
@@ -45,31 +47,45 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutPage></AboutPage>
       },
-      {
-        path: "/createShop",
-        element: <CreateShop></CreateShop>
-      },
-      {
-        path: "/addProduct",
-        element: <AddProductPage></AddProductPage>
-
-      },
-      {
-        path: "/myProducts",
-        element: <MyProducts></MyProducts>
-      },
+     
+      
       {
         path:"/productUpdate/:id",
         element: <ProductUpdate></ProductUpdate>
-      },
-      {
-        path: "/productTable",
-        element: <ProductTable></ProductTable>
       }
+    
 
 
     ]
   },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children:[
+      {
+        path: 'cart',
+        element: <Cart></Cart>
+      },
+      {
+        path: "createShop",
+        element: <CreateShop></CreateShop>
+      },   
+      {
+        path: "addProduct",
+        element: <AddProductPage></AddProductPage>
+
+      },
+      {
+        path: "productTable",
+        element: <ProductTable></ProductTable>
+      },
+      {
+        path: "myProducts",
+        element: <MyProducts></MyProducts>
+      },
+    ]
+
+  }
 ]);
 
 const queryClient = new QueryClient()
