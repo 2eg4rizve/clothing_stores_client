@@ -16,7 +16,9 @@ const Dashboard = () => {
 
                     <li><NavLink to="/dashboard/myProducts">My-Products</NavLink> </li>
                     
-                    <li><NavLink to="/dashboard/productTable">Product Table</NavLink> </li>
+                    <li><NavLink to="/dashboard/productTable">Check-Out</NavLink> </li>
+
+                    <li><NavLink to="/dashboard/subscription">Subscription & Payment</NavLink> </li>
 
                     
 

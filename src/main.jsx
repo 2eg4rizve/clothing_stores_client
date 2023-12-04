@@ -27,6 +27,7 @@ import Dashboard from './Layout/Dashboard';
 import Cart from './pages/Cart/Cart';
 import AllProduct from './pages/AllProduct/AllProduct';
 import ContactUs from './components/ContactUs/ContactUs';
+import Subscription from './pages/Subscription/Subscription';
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "myProducts",
         element: <MyProducts></MyProducts>
+      },
+      {
+        path: "subscription",
+        element: <Subscription></Subscription>
       },
     ]
 
