@@ -33,6 +33,7 @@ import ManageShop from './pages/ManageShop/ManageShop';
 import UserSection from './pages/UserSection/UserSection';
 import SalesCount from './pages/SalesCount/SalesCount';
 import SalesHistory from './pages/SalesHistory/SalesHistory';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: < PrivateRoute><Dashboard></Dashboard></PrivateRoute> ,
     children: [
       {
         path: 'cart',
@@ -141,3 +142,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   </React.StrictMode>,
 )
+
+
+//https://clothing-store-f6eaf.web.app

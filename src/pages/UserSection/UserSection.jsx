@@ -15,6 +15,7 @@ const UserSection = () => {
                             </th>
                             <th>User Name</th>
                             <th>User Email </th>
+                            <th>User Shop Name </th>
                             <th>Role</th>
                             <th>Promotion</th>
                            

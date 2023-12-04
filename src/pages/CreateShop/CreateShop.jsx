@@ -31,7 +31,7 @@ const CreateShop = () => {
 
 
 
-        fetch('http://localhost:5000/shops', {
+        fetch('https://clothing-stores-server.vercel.app/shops', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -14,7 +14,7 @@ const useAllShop = () => {
     const { isLoading, data: allShop = [] } = useQuery({
         queryKey: ['allShop'],
         queryFn: async () => {
-            const res = await axios.get("http://localhost:5000/shops");
+            const res = await axios.get("https://clothing-stores-server.vercel.app/shops");
             return res.data;
         }
     })

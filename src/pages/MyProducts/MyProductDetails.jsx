@@ -24,7 +24,7 @@ const MyProductDetails = ({ item, AllProductsRefetch }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // console.log("2nd : ",id);
-                fetch(`http://localhost:5000/products/${id}`, {
+                fetch(`https://clothing-stores-server.vercel.app/products/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -5,6 +5,7 @@
 const AllProductDetails = ({ item, AllProductsRefetch }) => {
 
     const { _id, productName, productImg,productLocation,shopName,SellingPrice } = item || " ";
+    console.log(productImg)
     return (
         <div>
 
