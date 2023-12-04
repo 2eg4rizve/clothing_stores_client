@@ -25,6 +25,7 @@ import ProductUpdate from './pages/ProductUpdate/ProductUpdate';
 import ProductTable from './pages/ProductTable/ProductTable';
 import Dashboard from './Layout/Dashboard';
 import Cart from './pages/Cart/Cart';
+import AllProduct from './pages/AllProduct/AllProduct';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,11 @@ const router = createBrowserRouter([
       {
         path:"/productUpdate/:id",
         element: <ProductUpdate></ProductUpdate>
-      }
+      },
+      {
+        path: "allProducts",
+        element: <AllProduct></AllProduct>
+      },
     
 
 
