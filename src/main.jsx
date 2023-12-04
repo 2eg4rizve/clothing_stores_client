@@ -28,6 +28,11 @@ import Cart from './pages/Cart/Cart';
 import AllProduct from './pages/AllProduct/AllProduct';
 import ContactUs from './components/ContactUs/ContactUs';
 import Subscription from './pages/Subscription/Subscription';
+import SalesView from './pages/SalesView/SalesView';
+import ManageShop from './pages/ManageShop/ManageShop';
+import UserSection from './pages/UserSection/UserSection';
+import SalesCount from './pages/SalesCount/SalesCount';
+import SalesHistory from './pages/SalesHistory/SalesHistory';
 
 const router = createBrowserRouter([
   {
@@ -98,6 +103,26 @@ const router = createBrowserRouter([
       {
         path: "subscription",
         element: <Subscription></Subscription>
+      },
+      {
+        path: "manageShop",
+        element: <ManageShop></ManageShop>
+      },
+      {
+        path: "salesView",
+        element: <SalesView></SalesView>
+      },
+      {
+        path: "userSection",
+        element: <UserSection></UserSection>
+      },
+      {
+        path: "salesCount",
+        element: <SalesCount></SalesCount>
+      },
+      {
+        path: "salesHistory",
+        element: <SalesHistory></SalesHistory>
       },
     ]
 

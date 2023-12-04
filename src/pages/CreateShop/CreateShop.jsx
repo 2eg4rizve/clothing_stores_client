@@ -3,6 +3,9 @@ import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
+// rizve@gmail.com
+// 123456A!
+
 const CreateShop = () => {
 
     const { user } = useContext(AuthContext);

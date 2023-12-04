@@ -4,6 +4,8 @@ const Subscription = () => {
     return (
         <div>
 
+            <p className="text-5xl font-bold text-center my-[40px] pt-[20px]">Subscription  & Payment</p>
+
             <div className="card w-96 bg-base-100 shadow-xl space-y-5">
                 <div className="card-body">
                     <h2 className="card-title">Increase The Limit </h2>
