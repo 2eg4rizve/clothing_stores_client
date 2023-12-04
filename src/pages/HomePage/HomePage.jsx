@@ -1,6 +1,8 @@
+import ContactUs from "../../components/ContactUs/ContactUs";
 import Faq from "../../components/Faq/Faq";
-import MyProducts from "../MyProducts/MyProducts";
+
 import AboutPage from "../AboutPage/AboutPage"
+import AllProduct from "../AllProduct/AllProduct";
 
 
 const HomePage = () => {
@@ -8,12 +10,14 @@ const HomePage = () => {
         <div>
 
             HomePage
-            <p className="text-5xl font-bold text-center my-[30px] pt-[20px]">My Product</p>
-            <MyProducts></MyProducts>
+           
+            <AllProduct></AllProduct>
          
             <AboutPage></AboutPage>
 
             <Faq></Faq>
+
+            <ContactUs></ContactUs>
 
            
 

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 
 
 const AllProductDetails = ({ item, AllProductsRefetch }) => {
@@ -6,7 +8,7 @@ const AllProductDetails = ({ item, AllProductsRefetch }) => {
     return (
         <div>
 
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card  bg-base-100 shadow-xl mt-[50px]">
                 <figure><img src={productImg} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Name : {productName}</h2>

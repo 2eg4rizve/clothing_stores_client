@@ -16,7 +16,7 @@ import CreateShop from './pages/CreateShop/CreateShop';
 import AddProductPage from './pages/AddProductPage/AddProductPage';
 
 import {
-  
+
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
@@ -26,6 +26,7 @@ import ProductTable from './pages/ProductTable/ProductTable';
 import Dashboard from './Layout/Dashboard';
 import Cart from './pages/Cart/Cart';
 import AllProduct from './pages/AllProduct/AllProduct';
+import ContactUs from './components/ContactUs/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -48,17 +49,22 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutPage></AboutPage>
       },
-     
-      
+
+
       {
-        path:"/productUpdate/:id",
+        path: "/productUpdate/:id",
         element: <ProductUpdate></ProductUpdate>
       },
       {
         path: "allProducts",
         element: <AllProduct></AllProduct>
       },
-    
+
+      {
+        path: "contactUs",
+        element: <ContactUs></ContactUs>
+      },
+
 
 
     ]
@@ -66,7 +72,7 @@ const router = createBrowserRouter([
   {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
-    children:[
+    children: [
       {
         path: 'cart',
         element: <Cart></Cart>
@@ -74,7 +80,7 @@ const router = createBrowserRouter([
       {
         path: "createShop",
         element: <CreateShop></CreateShop>
-      },   
+      },
       {
         path: "addProduct",
         element: <AddProductPage></AddProductPage>

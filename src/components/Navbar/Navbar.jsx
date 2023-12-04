@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
-
+// rizve@gmail.com
+// 123456A!
 
 
 const Navbar = () => {
@@ -91,9 +92,6 @@ const Navbar = () => {
 
         }
 
-
-
-
         {
             user && <NavLink
                 to="/about"
@@ -106,6 +104,24 @@ const Navbar = () => {
 
 
         }
+
+
+        {
+            <NavLink
+                to="/contactUs"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#362FD9] underline font-bold mr-[20px]" : "mr-[20px]"
+                }
+            >
+                Contact-Us
+            </NavLink>
+
+
+        }
+
+
+
+
 
 
         {

@@ -15,6 +15,8 @@ const AllProduct = () => {
         <div>
 
             <div>
+                <p className="text-5xl font-bold text-center my-[30px] pt-[20px]">All Product</p>
+
                 <p>Total Product :{allProducts.length}</p>
 
                 <div className="grid grid-cols-3 gap-5">
