@@ -163,7 +163,7 @@ const ProductUpdate = () => {
                         {/*Production Cost */}
                         <div className="form-control w-full mb-4">
                             <label className="label">
-                                <span className="label-text">Product Location</span>
+                                <span className="label-text">Production Cost</span>
                             </label>
                             <label className="input-group">
                                 <input type="text" name='productionCost' defaultValue={myProducts[0]?.productionCost} placeholder="User Name" className="input input-bordered w-full" />

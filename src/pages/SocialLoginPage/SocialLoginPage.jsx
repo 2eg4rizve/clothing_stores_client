@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import Swal from 'sweetalert2';
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import axios from "axios";
 
 
 const SocialLoginPage = () => {
@@ -21,7 +22,16 @@ const SocialLoginPage = () => {
 
     const handleSocialLogin = (media) => {
         media()
-            .then(() => {
+            .then((result) => {
+                console.log(result.user);
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axios.post('https://clothing-stores-server.vercel.app/users', userInfo)
+                .then(res=>{
+                    console.log(res.data)
+                })
                 Swal.fire({
                     icon: 'success',
                     title: 'OK...',
@@ -51,7 +61,7 @@ const SocialLoginPage = () => {
                         onClick={() => handleSocialLogin(googleLogin)}
                         className="btn btn-primary w-full  text-black bg-[#F4E869] mb-[20px] p-4">Google
                     </button>
-                    
+
 
 
                     <button

@@ -11,6 +11,7 @@ import { ScrollRestoration } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import SocialLoginPage from '../SocialLoginPage/SocialLoginPage';
+import axios from 'axios';
 
 
 
@@ -74,13 +75,29 @@ const RegisterPage = () => {
             .then(res => {
                 handleUpdateProfile(name, img)
                     .then(() => {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'OK...',
-                            text: "User Created Successfully",
+                        // create user entry in the database
+                        const userInfo = {
+                            name: name,
+                            email: email,
+                            role:"user"
+                        }
 
-                        })
-                        navigate(location?.state ? location.state : '/')
+                        axios.post('https://clothing-stores-server.vercel.app/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'OK...',
+                                        text: "User Created Successfully",
+
+                                    })
+                                    navigate(location?.state ? location.state : '/')
+
+                                }
+                            })
+
+
                     })
             })
             .catch(error => {
@@ -112,7 +129,7 @@ const RegisterPage = () => {
                                 <label className="label">
                                     <span className="label-text">Full Name</span>
                                 </label>
-                                <input type="text" placeholder="Full name" className="input input-bordered" name='name' required/>
+                                <input type="text" placeholder="Full name" className="input input-bordered" name='name' required />
                             </div>
 
                             <div className="form-control">
@@ -145,7 +162,7 @@ const RegisterPage = () => {
                             </label>
 
                         </form>
-                       <SocialLoginPage></SocialLoginPage>
+                        <SocialLoginPage></SocialLoginPage>
                     </div>
                 </div>
             </div>

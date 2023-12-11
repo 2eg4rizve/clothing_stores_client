@@ -24,7 +24,7 @@ const MyProducts = () => {
         <div>
             <p>Total Product :{myProducts.length}</p>
             
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                 {
                     myProducts.map(item => <MyProductDetails key={item._id} item={item} AllProductsRefetch={AllProductsRefetch}></MyProductDetails>)
                 }

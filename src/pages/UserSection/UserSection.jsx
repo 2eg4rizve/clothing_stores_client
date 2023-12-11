@@ -1,6 +1,21 @@
+import axios from "axios";
+import { useQuery } from "react-query";
 
 
 const UserSection = () => {
+
+    const { data: users = [] ,isLoading } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axios.get('https://clothing-stores-server.vercel.app/users');
+            return res.data;
+        }
+    })
+
+    if(isLoading){
+        <p>Loading..............</p>
+    }
+
     return (
         <div>
             <p className="text-5xl font-bold text-center my-[40px] pt-[20px]">ALL USER</p>
@@ -13,9 +28,11 @@ const UserSection = () => {
                             <th>
                                 #
                             </th>
+                            <th>User Id </th>
+
                             <th>User Name</th>
                             <th>User Email </th>
-                            <th>User Shop Name </th>
+                            
                             <th>Role</th>
                             <th>Promotion</th>
                            
@@ -24,40 +41,36 @@ const UserSection = () => {
                     </thead>
                     <tbody>
                         {
-                            // allShop.map((item, index) => <tr key={item._id}>
-                            //     <th>
-                            //         {index + 1}
-                            //     </th>
-                            //     <td>
-                            //         {item.shopName}
-                            //     </td>
-                            //     <td>
-                            //         {item._id}
-                            //     </td>
+                            users.map((item, index) => <tr key={item._id}>
+                                <th>
+                                    {index + 1}
+                                </th>
+                                
+                                <td>
+                                    {item._id}
+                                </td>
 
-                            //     <td>
-                            //         <div className="flex items-center gap-3">
-                            //             <div className="avatar">
-                            //                 <div className="mask mask-squircle w-12 h-12">
-                            //                     <img src={item.shopLogo} alt="Avatar Tailwind CSS Component" />
-                            //                 </div>
-                            //             </div>
-                            //         </div>
-                            //     </td>
+                                <td>
+                                    {item.name}
+                                </td>
 
-                            //     <td>{item.shopInfo}</td>
+                                <td>
+                                    {item.email}
+                                </td>
 
-                            //     <td>{item.shopInfo}</td>
+                                <td>
+                                    {item.role}
+                                </td>
+
+                              
 
 
-
-
-                            //     <th>
-                            //         <button className="btn btn-ghost btn-sm">
-                            //             Send Notice
-                            //         </button>
-                            //     </th>
-                            // </tr>)
+                                <th>
+                                    <button className="btn btn-ghost btn-sm">
+                                        Send Notice
+                                    </button>
+                                </th>
+                            </tr>)
                         }
 
 

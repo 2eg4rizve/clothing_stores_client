@@ -2,6 +2,7 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useAllShop from "../../hooks/useAllshop";
 
 // rizve@gmail.com
 // 123456A!
@@ -9,6 +10,15 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const CreateShop = () => {
 
     const { user } = useContext(AuthContext);
+
+    const [allShop, isLoading] = useAllShop();
+
+    if (isLoading) {
+        return <p>Loading...............</p>
+    }
+
+    const findUser = allShop.find(item => item.shopOwnerEmail === user?.email)
+
 
     const handleAdd = event => {
         event.preventDefault();
@@ -23,9 +33,9 @@ const CreateShop = () => {
 
         const shopOwnerEmail = form?.shopOwnerEmail?.value || "";
         const shopOwnerName = form?.shopOwnerName?.value || "";
-        
-    
-        const newShop = {shopName,shopLogo,shopInfo,shopLocation,shopOwnerEmail,shopOwnerName}
+
+
+        const newShop = { shopName, shopLogo, shopInfo, shopLocation, shopOwnerEmail, shopOwnerName }
 
         console.log(newShop);
 
@@ -50,6 +60,14 @@ const CreateShop = () => {
                     })
                 }
             })
+    }
+    if (findUser) {
+        return (
+            <div>
+                <p className="text-5xl font-bold text-center my-[30px] pt-[20px]">Create Shop</p>
+                <p className=""> All Ready You Have A Shop</p>
+            </div>
+        )
     }
     return (
         <div>

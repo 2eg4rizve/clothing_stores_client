@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
 
@@ -21,10 +22,15 @@ const Dashboard = () => {
 
 
     return (
-        <div className="flex max-w-screen-xl mx-auto mt-[50px]">
+        <div className="flex flex-col lg:flex-row max-w-screen-xl mx-auto mt-[50px]">
+
+            <Helmet>
+                <title>Riz Shop || Dashboard</title>
+
+            </Helmet>
             {/* <p>{user.email}</p>
             <p>isAdmin : {isAdmin}</p> */}
-            <div className="w-64 min-h-screen bg-blue-300 mr-[20px] space-y-10">
+            <div className="w-full lg:w-64 min-h-screen bg-blue-300 mr-[20px] space-y-10">
                 <ul className="menu">
 
                     {

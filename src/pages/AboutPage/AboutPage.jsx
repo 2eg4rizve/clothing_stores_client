@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 
 
+
 const AboutPage = () => {
     return (
         <div>
+            
 
             <p className="text-5xl font-bold text-center my-[30px] pt-[20px]">ABOUT</p>
 

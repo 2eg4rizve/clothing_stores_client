@@ -78,7 +78,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: < PrivateRoute><Dashboard></Dashboard></PrivateRoute> ,
+    element: < PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: 'cart',
@@ -131,14 +131,17 @@ const router = createBrowserRouter([
 ]);
 
 const queryClient = new QueryClient()
+import {  HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
 
   </React.StrictMode>,
 )

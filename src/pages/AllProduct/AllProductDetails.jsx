@@ -10,8 +10,8 @@ const AllProductDetails = ({ item, AllProductsRefetch }) => {
         <div>
 
             <div className="card  bg-base-100 shadow-xl mt-[50px]">
-                <figure><img src={productImg} alt="Shoes" /></figure>
-                <div className="card-body">
+                <figure><img className="h-[200px]" src={productImg} alt="Shoes" /></figure>
+                <div className="card-body h-[300px]">
                     <h2 className="card-title">Name : {productName}</h2>
                     <h2 className="card-title">Location : {productLocation}</h2>
                     <h2 className="card-title">Shop Name : {shopName}</h2>

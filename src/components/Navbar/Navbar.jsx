@@ -119,6 +119,20 @@ const Navbar = () => {
 
         }
 
+        {
+            <NavLink
+                to="https://youtu.be/YRzkxLmZH9g?feature=shared"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-[#362FD9] underline font-bold mr-[20px]" : "mr-[20px]"
+                }
+            >
+                Watch-Demo
+            </NavLink>
+
+
+        }
+
+
 
 
 
@@ -175,6 +189,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
+                    <img className="w-[25px] h-[25px]" src="https://i.ibb.co/cbpN0pr/logo1.jpg" alt="" />
                     <a className="btn btn-ghost normal-case text-xl">The Riz</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

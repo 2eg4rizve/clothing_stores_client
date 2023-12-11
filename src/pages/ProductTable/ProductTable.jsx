@@ -2,13 +2,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import useAllProducts from "../../hooks/useAllProducts";
+import Swal from "sweetalert2";
 
 
 const ProductTable = () => {
 
     const { user } = useContext(AuthContext);
 
-    const [allProducts,AllProductsLoading,AllProductsRefetch] = useAllProducts();
+    const [allProducts, AllProductsLoading, AllProductsRefetch] = useAllProducts();
 
     if (AllProductsLoading) {
         return <p>Loading...............</p>
@@ -18,7 +19,45 @@ const ProductTable = () => {
 
     const MyProducts = allProducts.filter(product => product.shopOwnerEmail == user.email)
 
-    console.log(MyProducts);
+    // console.log(MyProducts);
+
+    const handleCheckOut = (item) => {
+        console.log(item._id)
+        let x = item.productQuantity;
+        console.log(x);
+
+        const productQuantity=x-1;
+       
+        const newProduct = { productQuantity }
+        // Swal.fire({
+        //     title: "Successfully Check Out",
+        //     text: "Thanks ",
+        //     icon: "success"
+        // });
+        fetch(`https://clothing-stores-server.vercel.app/products/${item._id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("update product data : ", data)
+                AllProductsRefetch();
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Wow...',
+                        text: 'Successfully Check Out',
+                        confirmButtonText: 'cool'
+
+                    })
+                }
+            })
+
+
+    }
 
     return (
         <div>
@@ -61,17 +100,17 @@ const ProductTable = () => {
                                         </div>
                                     </div>
                                 </td>
-                               
+
                                 <td>{item.productQuantity}</td>
 
                                 <td>{item.productDiscount}%</td>
-                                
+
                                 <td>${item.SellingPrice}</td>
 
 
                                 <th>
-                                    <button  className="btn btn-ghost btn-sm">
-                                    Check-out
+                                    <button onClick={() => handleCheckOut(item)} className="btn btn-ghost btn-sm">
+                                        Check-out
                                     </button>
                                 </th>
                             </tr>)
